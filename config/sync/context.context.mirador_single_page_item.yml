@@ -1,0 +1,53 @@
+uuid: 156da8ad-46fb-4290-8870-a60d3452b7fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_mirador
+label: 'Mirador - Single-page item'
+name: mirador_single_page_item
+group: Display
+description: 'Displays the Service File or Original File in the Mirador viewer'
+requireAllConditions: true
+disabled: false
+conditions:
+  node_has_term:
+    id: node_has_term
+    negate: false
+    uuid: 69a37591-5104-467f-bedd-08f0ec62cd83
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uri: 'https://projectmirador.org'
+    logic: and
+  media_has_mimetype:
+    id: media_has_mimetype
+    negate: false
+    uuid: 6bc8e35f-dc19-4eb9-940d-7b2fd859ad0c
+    context_mapping:
+      node: '@node.node_route_context:node'
+    mimetypes: 'image/jpeg, image/gif, image/jp2, image/tiff'
+reactions:
+  blocks:
+    id: blocks
+    uuid: 56d8f779-1a1e-4d82-b8ae-98b18524f1bf
+    blocks:
+      ca099cbb-d515-4510-8231-10992732b72f:
+        uuid: ca099cbb-d515-4510-8231-10992732b72f
+        id: mirador_block
+        label: 'Mirador single page'
+        provider: islandora_mirador
+        label_display: '0'
+        region: featured_top
+        weight: '0'
+        custom_id: mirador_block
+        theme: isle
+        css_class: ''
+        unique: 0
+        context_id: mirador_single_page_item
+        context_mapping: {  }
+        iiif_manifest_url: '[node:url:unaliased:absolute]/manifest'
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

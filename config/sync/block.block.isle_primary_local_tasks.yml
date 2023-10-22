@@ -1,0 +1,22 @@
+uuid: a976bd41-720c-41bc-88d1-ee411eb567e0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - isle
+_core:
+  default_config_hash: Yn8X2HvHgmICQdELSfrUszRnBB4msQNK-sy3ABdtoxw
+id: isle_primary_local_tasks
+theme: isle
+region: featured_top
+weight: -8
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }

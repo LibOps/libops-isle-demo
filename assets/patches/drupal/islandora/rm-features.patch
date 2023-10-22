@@ -1,0 +1,424 @@
+diff --git a/.github/workflows/build-2.x.yml b/.github/workflows/build-2.x.yml
+index 6c78bcf9c..0f7fdc9bd 100644
+--- a/.github/workflows/build-2.x.yml
++++ b/.github/workflows/build-2.x.yml
+@@ -109,7 +109,6 @@ jobs:
+         run: |
+           cd $DRUPAL_DIR/web
+           drush --uri=127.0.0.1:8282 en -y islandora_audio islandora_breadcrumbs islandora_iiif islandora_image islandora_video islandora_text_extraction_defaults
+-          drush --uri=127.0.0.1:8282 fim -y islandora_core_feature,islandora_text_extraction_defaults
+ 
+       - name: Copy PHPunit file
+         run: cp $PHPUNIT_FILE $DRUPAL_DIR/web/core/phpunit.xml
+diff --git a/composer.json b/composer.json
+index 7706ec74b..b9a0b6e5c 100644
+--- a/composer.json
++++ b/composer.json
+@@ -17,7 +17,6 @@
+     "drupal/context": "^4 || ^5@RC",
+     "drupal/ctools": "^3.8 || ^4",
+     "drupal/eva" : "^3.0",
+-    "drupal/features" : "^3.13",
+     "drupal/file_replace": "^1.1",
+     "drupal/filehash": "^2",
+     "drupal/flysystem" : "^2.0@alpha",
+diff --git a/islandora.info.yml b/islandora.info.yml
+index 34e8118ac..6dd0597f2 100644
+--- a/islandora.info.yml
++++ b/islandora.info.yml
+@@ -22,7 +22,6 @@ dependencies:
+   - drupal:text
+   - drupal:views_ui
+   - eva:eva
+-  - features:features_ui
+   - file_replace:file_replace
+   - filehash:filehash
+   - flysystem:flysystem
+diff --git a/modules/islandora_core_feature/config/install/features.bundle.islandora.yml b/modules/islandora_core_feature/config/install/features.bundle.islandora.yml
+deleted file mode 100644
+index 9c3587314..000000000
+--- a/modules/islandora_core_feature/config/install/features.bundle.islandora.yml
++++ /dev/null
+@@ -1,100 +0,0 @@
+-langcode: en
+-status: true
+-dependencies:
+-  enforced:
+-    module:
+-      - islandora_core_feature
+-name: Islandora
+-machine_name: islandora
+-description: 'Features for islandora'
+-assignments:
+-  alter:
+-    core: true
+-    uuid: true
+-    user_permissions: true
+-    enabled: true
+-    weight: 0
+-  base:
+-    types:
+-      config:
+-        comment_type: comment_type
+-        node_type: node_type
+-      content:
+-        user: user
+-    enabled: true
+-    weight: -2
+-  core:
+-    types:
+-      config:
+-        date_format: date_format
+-        field_storage_config: field_storage_config
+-        entity_form_mode: entity_form_mode
+-        image_style: image_style
+-        menu: menu
+-        responsive_image_style: responsive_image_style
+-        user_role: user_role
+-        entity_view_mode: entity_view_mode
+-    enabled: true
+-    weight: 5
+-  dependency:
+-    enabled: true
+-    weight: 15
+-  exclude:
+-    types:
+-      config:
+-        features_bundle: features_bundle
+-    curated: true
+-    module:
+-      installed: true
+-      profile: true
+-      namespace: true
+-      namespace_any: false
+-    enabled: true
+-    weight: -5
+-  existing:
+-    enabled: true
+-    weight: 12
+-  forward_dependency:
+-    enabled: true
+-    weight: 4
+-  namespace:
+-    enabled: true
+-    weight: 0
+-  optional:
+-    types:
+-      config: {  }
+-    enabled: true
+-    weight: 0
+-  packages:
+-    enabled: true
+-    weight: -20
+-  profile:
+-    curated: true
+-    standard:
+-      files: true
+-      dependencies: true
+-    types:
+-      config:
+-        block: block
+-        language_content_settings: language_content_settings
+-        configurable_language: configurable_language
+-        migration: migration
+-        shortcut_set: shortcut_set
+-        tour: tour
+-    enabled: true
+-    weight: 10
+-  site:
+-    types:
+-      config:
+-        action: action
+-        contact_form: contact_form
+-        block_content_type: block_content_type
+-        rdf_mapping: rdf_mapping
+-        search_page: search_page
+-        taxonomy_vocabulary: taxonomy_vocabulary
+-        editor: editor
+-        filter_format: filter_format
+-    enabled: true
+-    weight: 7
+-profile_name: ''
+-is_profile: false
+diff --git a/modules/islandora_core_feature/config/install/core.entity_view_mode.media.source.yml b/modules/islandora_core_feature/config/optional/core.entity_view_mode.media.source.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/core.entity_view_mode.media.source.yml
+rename to modules/islandora_core_feature/config/optional/core.entity_view_mode.media.source.yml
+diff --git a/modules/islandora_core_feature/config/install/field.field.taxonomy_term.islandora_media_use.field_external_uri.yml b/modules/islandora_core_feature/config/optional/field.field.taxonomy_term.islandora_media_use.field_external_uri.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.field.taxonomy_term.islandora_media_use.field_external_uri.yml
+rename to modules/islandora_core_feature/config/optional/field.field.taxonomy_term.islandora_media_use.field_external_uri.yml
+diff --git a/modules/islandora_core_feature/config/install/field.field.taxonomy_term.islandora_models.field_external_uri.yml b/modules/islandora_core_feature/config/optional/field.field.taxonomy_term.islandora_models.field_external_uri.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.field.taxonomy_term.islandora_models.field_external_uri.yml
+rename to modules/islandora_core_feature/config/optional/field.field.taxonomy_term.islandora_models.field_external_uri.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_file_size.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_file_size.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_file_size.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_file_size.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_height.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_height.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_height.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_height.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_audio_file.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_audio_file.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_audio_file.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_audio_file.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_document.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_document.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_document.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_document.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_file.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_file.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_file.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_file.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_image.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_image.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_image.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_image.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_of.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_of.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_of.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_of.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_use.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_use.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_use.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_use.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_media_video_file.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_media_video_file.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_media_video_file.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_media_video_file.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_mime_type.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_mime_type.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_mime_type.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_mime_type.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_original_name.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_original_name.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_original_name.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_original_name.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.media.field_width.yml b/modules/islandora_core_feature/config/optional/field.storage.media.field_width.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.media.field_width.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.media.field_width.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.node.field_member_of.yml b/modules/islandora_core_feature/config/optional/field.storage.node.field_member_of.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.node.field_member_of.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.node.field_member_of.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.node.field_model.yml b/modules/islandora_core_feature/config/optional/field.storage.node.field_model.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.node.field_model.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.node.field_model.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.node.field_weight.yml b/modules/islandora_core_feature/config/optional/field.storage.node.field_weight.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.node.field_weight.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.node.field_weight.yml
+diff --git a/modules/islandora_core_feature/config/install/field.storage.taxonomy_term.field_external_uri.yml b/modules/islandora_core_feature/config/optional/field.storage.taxonomy_term.field_external_uri.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/field.storage.taxonomy_term.field_external_uri.yml
+rename to modules/islandora_core_feature/config/optional/field.storage.taxonomy_term.field_external_uri.yml
+diff --git a/modules/islandora_core_feature/config/install/filehash.settings.yml b/modules/islandora_core_feature/config/optional/filehash.settings.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/filehash.settings.yml
+rename to modules/islandora_core_feature/config/optional/filehash.settings.yml
+diff --git a/modules/islandora_core_feature/config/install/migrate_plus.migration.islandora_tags.yml b/modules/islandora_core_feature/config/optional/migrate_plus.migration.islandora_tags.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/migrate_plus.migration.islandora_tags.yml
+rename to modules/islandora_core_feature/config/optional/migrate_plus.migration.islandora_tags.yml
+diff --git a/modules/islandora_core_feature/config/install/migrate_plus.migration_group.islandora.yml b/modules/islandora_core_feature/config/optional/migrate_plus.migration_group.islandora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/migrate_plus.migration_group.islandora.yml
+rename to modules/islandora_core_feature/config/optional/migrate_plus.migration_group.islandora.yml
+diff --git a/modules/islandora_core_feature/config/install/rest.resource.entity.file.yml b/modules/islandora_core_feature/config/optional/rest.resource.entity.file.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/rest.resource.entity.file.yml
+rename to modules/islandora_core_feature/config/optional/rest.resource.entity.file.yml
+diff --git a/modules/islandora_core_feature/config/install/rest.resource.entity.media.yml b/modules/islandora_core_feature/config/optional/rest.resource.entity.media.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/rest.resource.entity.media.yml
+rename to modules/islandora_core_feature/config/optional/rest.resource.entity.media.yml
+diff --git a/modules/islandora_core_feature/config/install/rest.resource.entity.node.yml b/modules/islandora_core_feature/config/optional/rest.resource.entity.node.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/rest.resource.entity.node.yml
+rename to modules/islandora_core_feature/config/optional/rest.resource.entity.node.yml
+diff --git a/modules/islandora_core_feature/config/install/rest.resource.entity.taxonomy_term.yml b/modules/islandora_core_feature/config/optional/rest.resource.entity.taxonomy_term.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/rest.resource.entity.taxonomy_term.yml
+rename to modules/islandora_core_feature/config/optional/rest.resource.entity.taxonomy_term.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_file_as_fedora_external_content.yml b/modules/islandora_core_feature/config/optional/system.action.delete_file_as_fedora_external_content.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_file_as_fedora_external_content.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_file_as_fedora_external_content.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_media_from_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.delete_media_from_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_media_from_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_media_from_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_node_from_fedora.yml b/modules/islandora_core_feature/config/optional/system.action.delete_node_from_fedora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_node_from_fedora.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_node_from_fedora.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_node_from_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.delete_node_from_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_node_from_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_node_from_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_taxonomy_term_in_fedora.yml b/modules/islandora_core_feature/config/optional/system.action.delete_taxonomy_term_in_fedora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_taxonomy_term_in_fedora.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_taxonomy_term_in_fedora.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.delete_taxonomy_term_in_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.delete_taxonomy_term_in_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.delete_taxonomy_term_in_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.delete_taxonomy_term_in_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_file_as_fedora_external_content.yml b/modules/islandora_core_feature/config/optional/system.action.index_file_as_fedora_external_content.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_file_as_fedora_external_content.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_file_as_fedora_external_content.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_media_in_fedora.yml b/modules/islandora_core_feature/config/optional/system.action.index_media_in_fedora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_media_in_fedora.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_media_in_fedora.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_media_in_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.index_media_in_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_media_in_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_media_in_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_node_in_fedora.yml b/modules/islandora_core_feature/config/optional/system.action.index_node_in_fedora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_node_in_fedora.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_node_in_fedora.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_node_in_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.index_node_in_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_node_in_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_node_in_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_taxonomy_term_in_fedora.yml b/modules/islandora_core_feature/config/optional/system.action.index_taxonomy_term_in_fedora.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_taxonomy_term_in_fedora.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_taxonomy_term_in_fedora.yml
+diff --git a/modules/islandora_core_feature/config/install/system.action.index_taxonomy_term_in_the_triplestore.yml b/modules/islandora_core_feature/config/optional/system.action.index_taxonomy_term_in_the_triplestore.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/system.action.index_taxonomy_term_in_the_triplestore.yml
+rename to modules/islandora_core_feature/config/optional/system.action.index_taxonomy_term_in_the_triplestore.yml
+diff --git a/modules/islandora_core_feature/config/install/taxonomy.vocabulary.islandora_media_use.yml b/modules/islandora_core_feature/config/optional/taxonomy.vocabulary.islandora_media_use.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/taxonomy.vocabulary.islandora_media_use.yml
+rename to modules/islandora_core_feature/config/optional/taxonomy.vocabulary.islandora_media_use.yml
+diff --git a/modules/islandora_core_feature/config/install/taxonomy.vocabulary.islandora_models.yml b/modules/islandora_core_feature/config/optional/taxonomy.vocabulary.islandora_models.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/taxonomy.vocabulary.islandora_models.yml
+rename to modules/islandora_core_feature/config/optional/taxonomy.vocabulary.islandora_models.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.all_taxonomy_terms.yml b/modules/islandora_core_feature/config/optional/views.view.all_taxonomy_terms.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.all_taxonomy_terms.yml
+rename to modules/islandora_core_feature/config/optional/views.view.all_taxonomy_terms.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.display_media.yml b/modules/islandora_core_feature/config/optional/views.view.display_media.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.display_media.yml
+rename to modules/islandora_core_feature/config/optional/views.view.display_media.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.file_checksum.yml b/modules/islandora_core_feature/config/optional/views.view.file_checksum.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.file_checksum.yml
+rename to modules/islandora_core_feature/config/optional/views.view.file_checksum.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.manage_members.yml b/modules/islandora_core_feature/config/optional/views.view.manage_members.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.manage_members.yml
+rename to modules/islandora_core_feature/config/optional/views.view.manage_members.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.media_of.yml b/modules/islandora_core_feature/config/optional/views.view.media_of.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.media_of.yml
+rename to modules/islandora_core_feature/config/optional/views.view.media_of.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.non_fedora_files.yml b/modules/islandora_core_feature/config/optional/views.view.non_fedora_files.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.non_fedora_files.yml
+rename to modules/islandora_core_feature/config/optional/views.view.non_fedora_files.yml
+diff --git a/modules/islandora_core_feature/config/install/views.view.reorder_children.yml b/modules/islandora_core_feature/config/optional/views.view.reorder_children.yml
+similarity index 100%
+rename from modules/islandora_core_feature/config/install/views.view.reorder_children.yml
+rename to modules/islandora_core_feature/config/optional/views.view.reorder_children.yml
+diff --git a/modules/islandora_core_feature/islandora_core_feature.features.yml b/modules/islandora_core_feature/islandora_core_feature.features.yml
+deleted file mode 100755
+index 5af003a72..000000000
+--- a/modules/islandora_core_feature/islandora_core_feature.features.yml
++++ /dev/null
+@@ -1,16 +0,0 @@
+-bundle: islandora
+-excluded:
+-  - language.content_settings.taxonomy_term.islandora_media_use
+-  - language.content_settings.taxonomy_term.islandora_models
+-required:
+-  - features.bundle.islandora
+-  - field.storage.media.field_file_size
+-  - field.storage.media.field_height
+-  - field.storage.media.field_media_of
+-  - field.storage.media.field_media_use
+-  - field.storage.media.field_mime_type
+-  - field.storage.media.field_width
+-  - field.storage.node.field_member_of
+-  - field.storage.node.field_model
+-  - field.storage.node.field_weight
+-  - field.storage.taxonomy_term.field_external_uri
+diff --git a/modules/islandora_core_feature/islandora_core_feature.info.yml b/modules/islandora_core_feature/islandora_core_feature.info.yml
+index 6976eb8ca..38992ea7b 100755
+--- a/modules/islandora_core_feature/islandora_core_feature.info.yml
++++ b/modules/islandora_core_feature/islandora_core_feature.info.yml
+@@ -6,7 +6,6 @@ dependencies:
+   - drupal:basic_auth
+   - drupal:content_translation
+   - drupal:eva
+-  - drupal:features
+   - drupal:field
+   - drupal:file
+   - drupal:filehash
+diff --git a/modules/islandora_text_extraction_defaults/config/install/core.entity_form_display.media.extracted_text.default.yml b/modules/islandora_text_extraction_defaults/config/optional/core.entity_form_display.media.extracted_text.default.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/core.entity_form_display.media.extracted_text.default.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/core.entity_form_display.media.extracted_text.default.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/core.entity_view_display.media.extracted_text.default.yml b/modules/islandora_text_extraction_defaults/config/optional/core.entity_view_display.media.extracted_text.default.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/core.entity_view_display.media.extracted_text.default.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/core.entity_view_display.media.extracted_text.default.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_edited_text.yml b/modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_edited_text.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_edited_text.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_edited_text.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_file.yml b/modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_file.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_file.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_file.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_of.yml b/modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_of.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_of.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_of.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_use.yml b/modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_use.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_media_use.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_media_use.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_mime_type.yml b/modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_mime_type.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.field.media.extracted_text.field_mime_type.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.field.media.extracted_text.field_mime_type.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/field.storage.media.field_edited_text.yml b/modules/islandora_text_extraction_defaults/config/optional/field.storage.media.field_edited_text.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/field.storage.media.field_edited_text.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/field.storage.media.field_edited_text.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/language.content_settings.media.extracted_text.yml b/modules/islandora_text_extraction_defaults/config/optional/language.content_settings.media.extracted_text.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/language.content_settings.media.extracted_text.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/language.content_settings.media.extracted_text.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/media.type.extracted_text.yml b/modules/islandora_text_extraction_defaults/config/optional/media.type.extracted_text.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/media.type.extracted_text.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/media.type.extracted_text.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/rdf.mapping.media.extracted_text.yml b/modules/islandora_text_extraction_defaults/config/optional/rdf.mapping.media.extracted_text.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/rdf.mapping.media.extracted_text.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/rdf.mapping.media.extracted_text.yml
+diff --git a/modules/islandora_text_extraction_defaults/config/install/system.action.get_ocr_from_image.yml b/modules/islandora_text_extraction_defaults/config/optional/system.action.get_ocr_from_image.yml
+similarity index 100%
+rename from modules/islandora_text_extraction_defaults/config/install/system.action.get_ocr_from_image.yml
+rename to modules/islandora_text_extraction_defaults/config/optional/system.action.get_ocr_from_image.yml
+diff --git a/modules/islandora_text_extraction_defaults/islandora_text_extraction_defaults.features.yml b/modules/islandora_text_extraction_defaults/islandora_text_extraction_defaults.features.yml
+deleted file mode 100644
+index 9e48e9fd5..000000000
+--- a/modules/islandora_text_extraction_defaults/islandora_text_extraction_defaults.features.yml
++++ /dev/null
+@@ -1,2 +0,0 @@
+-bundle: islandora
+-required: true

@@ -1,0 +1,29 @@
+name: Sync database
+on: 
+  workflow_dispatch:
+    inputs:
+      source:
+        description: Source database
+        required: true
+        default: 'production'
+        type: string
+      target:
+        description: Target database
+        required: true
+        default: 'development'
+        type: string
+      confirm:
+        description: 'I understand the source database will overwrite the target database'
+        required: true
+        type: boolean
+jobs:
+  sync:
+    uses: libops/actions/.github/workflows/sync-db.yml@main
+    permissions:
+      pull-requests: write
+      contents: read
+      id-token: write
+    with:
+      source: ${{ github.event.inputs.source }}
+      target: ${{ github.event.inputs.target }}
+    secrets: inherit

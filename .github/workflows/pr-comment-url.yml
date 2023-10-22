@@ -1,0 +1,13 @@
+name: Get environment URL
+on:
+  pull_request:
+    types:
+      - opened
+jobs:
+  run:
+    uses: libops/actions/.github/workflows/pr-comment-url.yml@main
+    permissions:
+      contents: read
+      id-token: write
+      pull-requests: write
+    secrets: inherit

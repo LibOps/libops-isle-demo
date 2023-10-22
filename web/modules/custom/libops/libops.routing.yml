@@ -1,0 +1,7 @@
+libops.valid-scheme:
+  path: '/libops/valid-bucket/{bucket}'
+  defaults:
+    _controller: 'Drupal\libops\Controller\LibOps::validBucket'
+  requirements:
+    _access: 'TRUE'
+    bucket: '^[a-zA-Z0-9+.-]+$'

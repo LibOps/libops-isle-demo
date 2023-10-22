@@ -1,0 +1,22 @@
+uuid: 0191984c-152b-4f87-b7f2-36971b8d52ce
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - isle
+_core:
+  default_config_hash: rMk70QAgm5gQhhNzJL24z-B8z8M7g-NNYGtPvxLtCPI
+id: isle_content
+theme: isle
+region: content
+weight: -6
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

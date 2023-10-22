@@ -1,0 +1,14 @@
+name: Deploy to production
+on:
+  release:
+    types:
+      - released
+jobs:
+  deploy:
+    uses: libops/actions/.github/workflows/deploy.yml@main
+    with:
+      environment: production
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit

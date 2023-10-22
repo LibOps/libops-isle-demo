@@ -1,0 +1,15 @@
+name: Backup production (nightly)
+on:
+  schedule:
+    # UTC
+    - cron: '00 6 * * *'
+  workflow_dispatch:
+jobs:
+  backup:
+    uses: libops/actions/.github/workflows/backup.yml@main
+    with:
+      environment: production
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit

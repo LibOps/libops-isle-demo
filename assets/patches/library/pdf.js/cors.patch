@@ -1,0 +1,34 @@
+diff --git a/web/viewer.js b/web/viewer.js
+index 2043b5a..8cd4a7b 100644
+--- a/web/viewer.js
++++ b/web/viewer.js
+@@ -1641,9 +1641,27 @@ exports.PDFViewerApplication = PDFViewerApplication;
+       if (HOSTED_VIEWER_ORIGINS.includes(viewerOrigin)) {
+         return;
+       }
+-      const fileOrigin = new URL(file, window.location.href).origin;
++      const url = new URL(file, window.location.href);
++      const fileOrigin = url.origin;
+       if (fileOrigin !== viewerOrigin) {
+-        throw new Error("file origin does not match viewer's");
++        // allow GCS buckets configured for this site.
++        if (file.startsWith("https://storage.googleapis.com/")) {
++          let regex = /https:\/\/storage.googleapis.com\/([^/]+)/;
++          let match = file.match(regex);
++          if (match && match[1]) {
++            let extractedString = match[1];
++            var xhr = new XMLHttpRequest();
++            xhr.open('GET', '/libops/valid-bucket/' + extractedString, true);
++            xhr.onload = function () {
++              if (xhr.status != 200) {
++                throw new Error("file origin does not match viewer's");
++              }
++            };
++            xhr.send();
++          } else {
++            throw new Error("file origin does not match viewer's");
++          }
++        }
+       }
+     } catch (ex) {
+       PDFViewerApplication.l10n.get("loading_error").then(msg => {

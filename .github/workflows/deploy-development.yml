@@ -1,0 +1,38 @@
+name: Deploy to development environment
+on:
+  create:
+  push:
+jobs:
+  create-environment:
+    if: github.event.ref_type == 'branch'
+    uses: libops/actions/.github/workflows/libops.yml@main
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit
+    with:
+      branch: ${{ github.ref_name }}
+  ci-cd:
+    if: |
+      always() &&
+      github.event.ref_type != 'tag' &&
+      (needs.create-environment.result == 'success' ||
+      (needs.create-environment.result == 'skipped' && github.event.created == false))
+    needs: create-environment
+    uses: libops/actions/.github/workflows/deploy.yml@main
+    with:
+      environment: ${{ github.ref_name }}
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit
+  sync-new-environment:
+    needs: [create-environment, ci-cd]
+    uses: libops/actions/.github/workflows/sync-db.yml@main
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      source: "development"
+      target: ${{ github.ref_name }}
+    secrets: inherit

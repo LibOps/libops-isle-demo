@@ -1,0 +1,46 @@
+uuid: 6f51f566-c2a7-4d1b-a033-7d867c50b124
+langcode: en
+status: true
+dependencies:
+  module:
+    - islandora
+    - islandora_mirador
+label: 'Mirador - Multi-page item'
+name: mirador_multi_page_item
+group: Display
+description: 'If Paged Content or Publication Issue, display Openseadragon from manifest'
+requireAllConditions: true
+disabled: false
+conditions:
+  node_has_term:
+    id: node_has_term
+    negate: false
+    uuid: 7ef3626d-6122-4401-a4a8-7ddf40a0fedb
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uri: 'https://schema.org/PublicationIssue,http://id.loc.gov/vocabulary/resourceTypes/bke,https://schema.org/Book'
+    logic: or
+reactions:
+  blocks:
+    id: blocks
+    uuid: b1068a30-0b51-45dd-877c-554cd82056a0
+    blocks:
+      97b46c9d-e772-47ed-8978-9f153e592fe7:
+        uuid: 97b46c9d-e772-47ed-8978-9f153e592fe7
+        id: mirador_block
+        label: 'Mirador block'
+        provider: islandora_mirador
+        label_display: '0'
+        region: featured_top
+        weight: '0'
+        custom_id: mirador_block
+        theme: isle
+        css_class: ''
+        unique: 0
+        context_id: mirador_multi_page_item
+        context_mapping: {  }
+        iiif_manifest_url: '[node:url:unaliased:absolute]/book-manifest'
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0

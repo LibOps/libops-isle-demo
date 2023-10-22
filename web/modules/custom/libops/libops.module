@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * @file
+ * Contains libops.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Site\Settings;
+use Google\Cloud\Storage\StorageClient;
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_help().
+ */
+function libops_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the libops module.
+    case 'help.page.libops':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Run Islandora on Google Cloud') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function libops_entity_insert(EntityInterface $entity) {
+  _libops_entity_op('create', $entity);
+}
+
+function libops_entity_update(EntityInterface $entity) {
+  _libops_entity_op('update', $entity);
+}
+
+function libops_entity_delete(EntityInterface $entity) {
+  _libops_entity_op('delete', $entity);
+}
+
+function _libops_entity_op($op, EntityInterface $entity) {
+  $entity_type = $entity->getEntityTypeId();
+  if (in_array($entity_type, ['file', 'node', 'media', 'taxonomy_term'])) {
+    $settings = Settings::get('flysystem', []);
+    $key = 'gs-' . getenv('LIBOPS_ENVIRONMENT');
+    $config = $settings[$key]['config'];
+    $bucketName = getenv('LIBOPS_GCLOUD_PROJECT_ID'). '-' . getenv('LIBOPS_ENVIRONMENT'). '-metadata';
+    $config['bucket'] = $bucketName;
+    $storage = new StorageClient($config);
+    $bucket = $storage->bucket($bucketName);
+
+    $bundle = $entity->bundle();
+    $entity_id = $entity->id();
+    $objectName = "$entity_type/$bundle/$entity_id";
+    $context = ['cacheability' => new CacheableMetadata()];
+    foreach (['json', 'jsonld'] as $format) {
+      try {
+        if ($op == 'delete') {
+          $object = $bucket->object($objectName);
+          $object->delete();
+        }
+        else {
+          $data = \Drupal::service('serializer')->serialize($entity, $format, $context);
+          $bucket->upload($data, [
+            'name' => $objectName . ".$format"
+          ]);
+        }
+      } catch (Exception $e) {
+
+      }
+    }
+  }
+}
+
+function libops_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if (isset($form['#id']) && $form['#id'] == 'views-exposed-form-collections-entity-browser-1') {
+    $form['field_member_of_target_id']['#type'] = 'select';
+    $form['field_member_of_target_id']['#size'] = 1;
+    $form['field_member_of_target_id']['#options'] = ['' => '- Any -'] + \Drupal::database()->query("SELECT n.nid, n.title from node_field_data n
+      INNER JOIN node__field_model m ON m.entity_id = n.nid
+      INNER JOIN taxonomy_term__field_external_uri u ON u.entity_id = m.field_model_target_id
+      WHERE field_external_uri_uri IN (
+        'http://purl.org/dc/dcmitype/Collection',
+        'https://schema.org/Book',
+        'https://schema.org/PublicationIssue'
+      )
+      ORDER BY title")->fetchAllKeyed();
+  }
+}

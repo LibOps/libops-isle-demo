@@ -1,0 +1,35 @@
+uuid: 919a8fe8-13b7-4535-8d1a-ee15625f8149
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.member_of
+  module:
+    - facets
+    - islandora
+    - system
+  theme:
+    - isle
+id: isle_memberof
+theme: isle
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'facet_block:member_of'
+settings:
+  id: 'facet_block:member_of'
+  label: Collection
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: isle_memberof
+visibility:
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

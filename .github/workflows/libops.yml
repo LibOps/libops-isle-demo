@@ -1,0 +1,16 @@
+name: Update libops.yml
+on:
+  push:
+    branches:    
+      - development
+    paths:
+      - 'libops.yml'
+jobs:
+  yml:
+    uses: libops/actions/.github/workflows/libops.yml@main
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit
+    with:
+      branch: development

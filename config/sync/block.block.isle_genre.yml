@@ -1,0 +1,35 @@
+uuid: 2c5c8be6-d19e-4a49-9386-16eedea9c4a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.genre
+  module:
+    - facets
+    - islandora
+    - system
+  theme:
+    - isle
+id: isle_genre
+theme: isle
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:genre'
+settings:
+  id: 'facet_block:genre'
+  label: Genre
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: isle_genre
+visibility:
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

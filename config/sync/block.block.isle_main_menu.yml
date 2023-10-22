@@ -1,0 +1,27 @@
+uuid: f67696e4-1983-4ae1-9889-d9d5f2e7ac45
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - isle
+_core:
+  default_config_hash: rIFUxwUE5TLj1Qynn6_5o7Tbf_-19O5yHqs2QD_jrlI
+id: isle_main_menu
+theme: isle
+region: primary_menu
+weight: -6
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 2
+  expand_all_items: true
+visibility: {  }

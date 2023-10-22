@@ -1,0 +1,25 @@
+uuid: 3681086e-7183-4668-8bc0-fc46f9847a35
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - isle
+_core:
+  default_config_hash: xAssmDrRkRJzDAnbiy4Gtw1gEGgvsyZMODiUdPRGiIs
+id: isle_site_branding
+theme: isle
+region: header
+weight: -7
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }

@@ -1,0 +1,17 @@
+/.composer
+/.drush-lock-update
+/.editorconfig
+/.gitattributes
+/vendor/
+/web/**/.gitignore
+/web/core/
+/web/libraries/
+/web/modules/contrib/
+/web/profiles/contrib/
+/web/sites/*/private
+/web/sites/*/services*.yml
+!/web/sites/*/services.yml
+/web/sites/*/settings.local.php
+/web/sites/simpletest
+/web/themes/contrib/
+.DS_Store

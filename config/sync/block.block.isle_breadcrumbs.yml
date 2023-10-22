@@ -1,0 +1,22 @@
+uuid: c6528c81-3a72-43c9-b209-c231c0b0376d
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - isle
+_core:
+  default_config_hash: DLL4hIykP7oWE19_VGHhGNbjNahMThHRUhi7PzR4Hng
+id: isle_breadcrumbs
+theme: isle
+region: featured_top
+weight: -7
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 6f1b4bc8-824f-4793-9036-f0ac36db3205
+langcode: en
+status: true
+dependencies:
+  theme:
+    - isle
+_core:
+  default_config_hash: akMyRCpT17NIDrb0o3cyJRN4D-9U9aNJHpOw6AVq0vc
+id: isle_page_title
+theme: isle
+region: featured_top
+weight: -6
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

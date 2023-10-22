@@ -1,0 +1,35 @@
+uuid: 430c00eb-9833-453b-9762-8aa3c19a64c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.resource_type
+  module:
+    - facets
+    - islandora
+    - system
+  theme:
+    - isle
+id: isle_resourcetype
+theme: isle
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'facet_block:resource_type'
+settings:
+  id: 'facet_block:resource_type'
+  label: 'Resource Type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: isle_resourcetype
+visibility:
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search

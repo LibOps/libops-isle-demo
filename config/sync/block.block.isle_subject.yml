@@ -1,0 +1,30 @@
+uuid: 3826cca7-7f40-4b6d-b41a-089fb83054fd
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.subject
+  module:
+    - facets
+    - islandora
+  theme:
+    - isle
+id: isle_subject
+theme: isle
+region: sidebar_first
+weight: -5
+provider: null
+plugin: 'facet_block:subject'
+settings:
+  id: 'facet_block:subject'
+  label: Subject
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: isle_subject
+visibility:
+  media_source_mimetype:
+    id: media_source_mimetype
+    negate: false
+    context_mapping: {  }
+    mimetype: ''

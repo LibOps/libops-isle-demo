@@ -1,0 +1,42 @@
+uuid: cedf2cb2-9d41-4008-956e-bdcd272ecc0d
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.collections
+  module:
+    - entity_browser_entity_form
+    - views
+name: collections
+label: Collections
+display: modal
+display_configuration:
+  width: ''
+  height: ''
+  link_text: 'Select the member of'
+  auto_open: false
+selection_display: no_display
+selection_display_configuration: {  }
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  60352c9e-6119-4ea9-abed-b41cc2f0b591:
+    id: entity_form
+    uuid: 60352c9e-6119-4ea9-abed-b41cc2f0b591
+    label: 'Add a new collection'
+    weight: -9
+    settings:
+      submit_text: 'Create collection'
+      entity_type: node
+      bundle: islandora_object
+      form_mode: collection
+  76bb0836-91e4-46de-aea5-5128e47fa8b9:
+    id: view
+    uuid: 76bb0836-91e4-46de-aea5-5128e47fa8b9
+    label: 'Select an existing collection'
+    weight: -10
+    settings:
+      submit_text: 'Select collection(s)'
+      auto_select: false
+      view: collections
+      view_display: entity_browser_1

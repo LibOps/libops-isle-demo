@@ -1,0 +1,14 @@
+name: Branch deleted
+on:
+  delete:
+jobs:
+  delete-environment:
+    if: github.event.ref_type == 'branch'
+    uses: libops/actions/.github/workflows/libops.yml@main
+    permissions:
+      contents: read
+      id-token: write
+    secrets: inherit
+    with:
+      route: "env/del"
+      branch: ${{ format(github.event.ref, 'refs/heads/', '') }}

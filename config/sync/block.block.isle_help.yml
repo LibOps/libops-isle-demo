@@ -1,0 +1,22 @@
+uuid: 8f565e47-e063-45ee-82fd-4b37268de110
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - isle
+_core:
+  default_config_hash: TrHwsWxPaAWYfwqGUaWB4K_MAA8OAgpociTtLaITBXQ
+id: isle_help
+theme: isle
+region: highlighted
+weight: -2
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

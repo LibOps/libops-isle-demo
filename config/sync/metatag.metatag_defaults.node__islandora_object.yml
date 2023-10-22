@@ -1,0 +1,12 @@
+uuid: 4e28592a-dd12-471f-8ec7-4bdcae4be573
+langcode: en
+status: true
+dependencies: {  }
+id: node__islandora_object
+label: 'Content: Repository Item'
+tags:
+  citation_author: '[islandoratokens:agent_author]'
+  citation_pdf_url: '[islandoratokens:pdf_url]'
+  citation_publication_date: '[islandoratokens:publication_date]'
+  citation_title: '[islandoratokens:title]'
+  image_src: '[islandoratokens:media-thumbnail-image:url]'

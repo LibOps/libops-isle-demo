@@ -1,0 +1,8 @@
+{
+    "name": "libops",
+    "type": "drupal-module",
+    "description": "Run Islandora on Google Cloud",
+    "keywords": [
+    ],
+    "minimum-stability": "dev"
+}
