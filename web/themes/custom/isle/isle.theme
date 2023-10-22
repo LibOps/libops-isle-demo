@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Markup;
 
 /**
  * Implements hook_form_system_theme_settings_alter() for settings form.
@@ -46,13 +47,13 @@ function isle_preprocess_page__search(&$variables) {
       ],
       'id' => 'facets',
     ],
-    '#prefix' =>  '<nav class="navbar navbar-expand-md">
+    '#prefix' =>  Markup::create('<nav class="navbar navbar-expand-md">
                   <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#facets" aria-controls="facets" aria-expanded="false" aria-label="Toggle facets">
                       <span class="navbar-toggler-icon"></span>
                     </button>
                   </div>
-                </nav>',
+                </nav>'),
   ];
   foreach ($variables['page']['sidebar_first'] as $key => $facet) {
     if ($key[0] !== '#' && $key !== 'wrapper') {
