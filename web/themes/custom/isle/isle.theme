@@ -32,3 +32,32 @@ function isle_form_system_theme_settings_alter(&$form, FormStateInterface $form_
     'bg-transparent' => t('Transparent'),
   ];
 }
+
+function isle_preprocess_page__search(&$variables) {
+  $variables['#attached']['library'][] = 'isle/search';
+
+  $variables['page']['sidebar_first']['wrapper'] = [
+    '#type' => 'container',
+    '#attributes' => [
+      'class' => [
+         'accordion',
+         'navbar-collapse',
+         'collapse',
+      ],
+      'id' => 'facets',
+    ],
+    '#prefix' =>  '<nav class="navbar navbar-expand-md">
+                  <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#facets" aria-controls="facets" aria-expanded="false" aria-label="Toggle facets">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </div>
+                </nav>',
+  ];
+  foreach ($variables['page']['sidebar_first'] as $key => $facet) {
+    if ($key[0] !== '#' && $key !== 'wrapper') {
+      $variables['page']['sidebar_first']['wrapper'][$key] = $facet;
+      unset($variables['page']['sidebar_first'][$key]);
+    }
+  }
+}

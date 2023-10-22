@@ -1,0 +1,9 @@
+@media (min-width: 768px) {
+    #facets {
+      display: block !important;
+    }
+ }
+
+.sidebar h2 {
+    border: none;
+}

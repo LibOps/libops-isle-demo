@@ -32,3 +32,10 @@ color.preview:
     color/preview.js: {}
   dependencies:
     - color/drupal.color
+search:
+  version: 0.1
+  js:
+    js/search.js: {}
+  css:
+    component:
+      css/search.css: {}
