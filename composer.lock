@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7396c67dec5829b80c9e15b1c1aa2cb6",
+    "content-hash": "e473f5a8cb6fe268908f95b437ddca2f",
     "packages": [
         {
             "name": "academicpuma/citeproc-php",
@@ -8099,6 +8099,55 @@
             "time": "2023-10-17T14:13:20+00:00"
         },
         {
+            "name": "libops/isle",
+            "version": "1.0.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LibOps/isle-theme.git",
+                "reference": "43490912af331eebe8b5eb785908bc416e81b5e7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LibOps/isle-theme/zipball/43490912af331eebe8b5eb785908bc416e81b5e7",
+                "reference": "43490912af331eebe8b5eb785908bc416e81b5e7",
+                "shasum": ""
+            },
+            "require": {
+                "drupal/bootstrap_barrio": "^5.5"
+            },
+            "type": "drupal-theme",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Bootstrap theme for Islandora",
+            "support": {
+                "issues": "https://github.com/LibOps/isle-theme/issues",
+                "source": "https://github.com/LibOps/isle-theme/tree/1.0.0-beta1"
+            },
+            "time": "2023-10-23T22:05:23+00:00"
+        },
+        {
+            "name": "libops/libops",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LibOps/drupal-module.git",
+                "reference": "0803899beb6f6cdf172733135fbc185d6f6e0766"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LibOps/drupal-module/zipball/0803899beb6f6cdf172733135fbc185d6f6e0766",
+                "reference": "0803899beb6f6cdf172733135fbc185d6f6e0766",
+                "shasum": ""
+            },
+            "type": "drupal-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Run Islandora on Google Cloud",
+            "support": {
+                "issues": "https://github.com/LibOps/drupal-module/issues",
+                "source": "https://github.com/LibOps/drupal-module/tree/1.0.0"
+            },
+            "time": "2023-10-23T21:53:10+00:00"
+        },
+        {
             "name": "library/pdf.js",
             "version": "3.11.174",
             "dist": {
@@ -13903,6 +13952,7 @@
         "drupal/views_bootstrap": 15,
         "drupal/views_field_view": 10,
         "islandora-rdm/islandora_fits": 20,
+        "libops/isle": 10,
         "mjordan/islandora_workbench_integration": 20
     },
     "prefer-stable": true,

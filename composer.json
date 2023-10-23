@@ -85,6 +85,8 @@
         "islandora-rdm/islandora_fits": "dev-8.x-1.x as 1.x-dev",
         "islandora/islandora_mirador": "^2.3",
         "islandora/views_nested_details": "^1.0",
+        "libops/isle": "^1.0@beta",
+        "libops/libops": "^1.0",
         "library/pdf.js": "^3.11",
         "mjordan/islandora_workbench_integration": "dev-main"
     },
