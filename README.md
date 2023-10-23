@@ -8,7 +8,7 @@ See [LibOps Development Documentation](https://libops.github.io/documentation/de
 > | Environment | URL |
 > | --- | --- |
 > | development | https://drupal-development-tugvpitiuq-uc.a.run.app |
-> | production  | https://drupal-production-tugvpitiuq-uc.a.run.app |
+> | production  | https://demo.libops.io |
 
 The basics are:
 
