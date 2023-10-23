@@ -1,5 +1,0 @@
-services:
-  libops.uri:
-    class: Drupal\libops\Config\UriOverride
-    tags:
-      - {name: config.factory.override, priority: 255}
