@@ -9,7 +9,7 @@ label: 'Mirador - Single-page item'
 name: mirador_single_page_item
 group: Display
 description: 'Displays the Service File or Original File in the Mirador viewer'
-requireAllConditions: true
+requireAllConditions: false
 disabled: false
 conditions:
   node_has_term:
@@ -19,7 +19,7 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     uri: 'https://projectmirador.org'
-    logic: and
+    logic: or
   media_has_mimetype:
     id: media_has_mimetype
     negate: false

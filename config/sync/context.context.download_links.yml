@@ -1,0 +1,48 @@
+uuid: 71a2217d-64d4-4270-8776-b386aa54a56f
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.media_download
+  module:
+    - islandora
+    - views
+label: 'Download Links'
+name: download_links
+group: Display
+description: ''
+requireAllConditions: false
+disabled: false
+conditions:
+  media_has_mimetype:
+    id: media_has_mimetype
+    negate: true
+    uuid: c4d958e3-6664-4a76-a5a9-358116913053
+    context_mapping:
+      node: '@node.node_route_context:node'
+    mimetypes: "this-mime-type-doesn't-exist"
+reactions:
+  blocks:
+    id: blocks
+    uuid: 22e22bc4-ebbf-453c-bd97-aad3378e8b4c
+    blocks:
+      d669146b-0f5f-4264-934e-34f8834ca782:
+        uuid: d669146b-0f5f-4264-934e-34f8834ca782
+        id: 'views_block:media_download-source'
+        label: ''
+        provider: views
+        label_display: visible
+        region: sidebar_second
+        weight: '0'
+        custom_id: views_block_media_download_source
+        theme: isle
+        css_class: ''
+        unique: 0
+        context_id: download_links
+        context_mapping: {  }
+        views_label: ''
+        items_per_page: none
+        third_party_settings: {  }
+    include_default_blocks: 0
+    saved: false
+weight: 0
