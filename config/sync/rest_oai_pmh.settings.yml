@@ -9,14 +9,14 @@ view_displays:
 support_sets: 1
 metadata_map_plugins:
   -
-    label: mods
-    value: mods
-  -
     label: oai_dc
     value: dublin_core_rdf
   -
     label: oai_raw
     value: ''
+  -
+    label: mods
+    value: mods
 mods_view:
   view_machine_name: article_mods_mapping
   view_display_name: default

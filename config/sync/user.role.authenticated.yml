@@ -4,10 +4,12 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - rest.resource.oai_pmh
   module:
     - filter
     - matomo
     - media
+    - rest
     - shortcut
     - system
 _core:
@@ -20,5 +22,6 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'opt-in or out of matomo tracking'
+  - 'restful get oai_pmh'
   - 'use text format basic_html'
   - 'view media'
