@@ -1,28 +1,28 @@
-uuid: 926fc381-1279-4ced-b855-2c14fb62be03
+uuid: 5afed069-af29-47c7-b38b-cbe8866c285b
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.year
+    - facets.facet.subject_temporal
   module:
     - facets
     - islandora
     - system
   theme:
     - isle
-id: isle_year
+id: isle_subjecttemporal
 theme: isle
 region: sidebar_first
-weight: -7
+weight: -2
 provider: null
-plugin: 'facet_block:year'
+plugin: 'facet_block:subject_temporal'
 settings:
-  id: 'facet_block:year'
-  label: Year
+  id: 'facet_block:subject_temporal'
+  label: 'Subject (Temporal)'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: isle_year
+  block_id: isle_subjecttemporal
 visibility:
   media_source_mimetype:
     id: media_source_mimetype

@@ -1,4 +1,4 @@
-uuid: d4bf2651-0fd1-4fde-aa10-27e664dcceea
+uuid: 4ba805f7-7232-4595-91d2-2722f0196dea
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
-id: subject_names_swc
-name: 'Subject (Names) SwC'
-weight: 1
+id: subject_temporal
+name: 'Subject (Temporal)'
+weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: subject_names
-facet_source_id: 'search_api:views_block__solr_search_content__block_1'
-field_identifier: subject_names_name
+url_alias: subject_temporal
+facet_source_id: 'search_api:views_page__solr_search_content__page_1'
+field_identifier: field_temporal_subject
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -61,15 +61,15 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
-  hide_inactive_siblings_processor:
-    processor_id: hide_inactive_siblings_processor
-    weights:
-      build: 10
-    settings: {  }
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
+    settings: {  }
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler

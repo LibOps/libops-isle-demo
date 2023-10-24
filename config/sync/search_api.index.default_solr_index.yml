@@ -11,13 +11,13 @@ dependencies:
     - field.storage.node.field_dewey_classification
     - field.storage.node.field_edition
     - field.storage.node.field_extent
+    - field.storage.node.field_physical_form
     - field.storage.node.field_full_title
     - field.storage.node.field_genre
     - field.storage.node.field_isbn
     - field.storage.node.field_lcc_classification
     - field.storage.node.field_linked_agent
     - field.storage.node.field_oclc_number
-    - field.storage.node.field_physical_form
     - field.storage.node.field_resource_type
     - field.storage.node.field_rights
     - field.storage.node.field_subject_general
@@ -183,6 +183,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_genre
+  field_geographic_subject_1:
+    label: 'Subject (Geographic)'
+    datasource_id: 'entity:node'
+    property_path: field_geographic_subject
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_geographic_subject
   field_isbn:
     label: ISBN
     datasource_id: 'entity:node'
@@ -235,6 +243,14 @@ field_settings:
         - field.storage.node.field_physical_form
       module:
         - taxonomy
+  field_physical_form_1:
+    label: Form
+    datasource_id: 'entity:node'
+    property_path: field_physical_form
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_physical_form
   field_resource_type:
     label: 'Resource Type'
     datasource_id: 'entity:node'
@@ -251,6 +267,30 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_rights
+  field_subject:
+    label: 'Subject (Topical)'
+    datasource_id: 'entity:node'
+    property_path: field_subject
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_subject
+  field_subject_general:
+    label: Subject
+    datasource_id: 'entity:node'
+    property_path: field_subject_general
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_subject_general
+  field_subjects_name:
+    label: 'Subject (Name)'
+    datasource_id: 'entity:node'
+    property_path: field_subjects_name
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_subjects_name
   field_tags:
     label: Tags
     datasource_id: 'entity:node'
@@ -259,6 +299,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_tags
+  field_temporal_subject:
+    label: 'Subject (Temporal)'
+    datasource_id: 'entity:node'
+    property_path: field_temporal_subject
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_temporal_subject
   linked_agent_name_fulltext:
     label: Names
     datasource_id: 'entity:node'
@@ -354,56 +402,6 @@ field_settings:
         - 'entity:node/field_subject_general'
         - 'entity:node/field_subjects_name'
         - 'entity:node/field_temporal_subject'
-  subject_general_name:
-    label: Subject
-    datasource_id: 'entity:node'
-    property_path: 'field_subject_general:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_subject_general
-      module:
-        - taxonomy
-  subject_geographic_name:
-    label: 'Subject (Geographic)'
-    datasource_id: 'entity:node'
-    property_path: 'field_geographic_subject:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_geographic_subject
-      module:
-        - taxonomy
-  subject_names_name:
-    label: 'Subject (Names)'
-    datasource_id: 'entity:node'
-    property_path: 'field_subjects_name:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_subjects_name
-      module:
-        - taxonomy
-  subject_temporal_name:
-    label: 'Subject (Temporal)'
-    datasource_id: 'entity:node'
-    property_path: 'field_temporal_subject:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_temporal_subject
-      module:
-        - taxonomy
-  subject_topical_name:
-    label: 'Subject (Topical)'
-    datasource_id: 'entity:node'
-    property_path: 'field_subject:entity:name'
-    type: string
-    dependencies:
-      config:
-        - field.storage.node.field_subject
-      module:
-        - taxonomy
   title:
     label: Title
     datasource_id: 'entity:node'

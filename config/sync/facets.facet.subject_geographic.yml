@@ -1,4 +1,4 @@
-uuid: ad6fa672-e09e-41f4-b5a7-0931e7780a36
+uuid: 9ec76b86-86cb-40d3-a703-2653128757c3
 langcode: en
 status: true
 dependencies:
@@ -7,17 +7,15 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
-_core:
-  default_config_hash: '-kS3T9_5sZ-R0F3FpEYcphpjlBCsF0vRw8LlzbmKo6E'
-id: physical_form
-name: 'Physical Form'
-weight: -2
+id: subject_geographic
+name: 'Subject (Geographic)'
+weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: physical_form
+url_alias: subject_geographic
 facet_source_id: 'search_api:views_page__solr_search_content__page_1'
-field_identifier: field_physical_form
+field_identifier: field_geographic_subject_1
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -33,9 +31,9 @@ widget:
   config:
     show_numbers: true
     soft_limit: 10
-    show_reset_link: true
+    show_reset_link: false
     reset_text: 'Show all'
-    hide_reset_when_no_selection: true
+    hide_reset_when_no_selection: false
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -63,15 +61,15 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
-  hide_inactive_siblings_processor:
-    processor_id: hide_inactive_siblings_processor
-    weights:
-      build: 10
-    settings: {  }
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
+    settings: {  }
+  translate_entity:
+    processor_id: translate_entity
+    weights:
+      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler

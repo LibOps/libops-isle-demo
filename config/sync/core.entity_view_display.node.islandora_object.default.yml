@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - facets.facet.subject_temporal
     - field.field.node.islandora_object.field_abstract
     - field.field.node.islandora_object.field_alt_title
     - field.field.node.islandora_object.field_classification
@@ -50,6 +51,7 @@ dependencies:
     - node.type.islandora_object
   module:
     - controlled_access_terms
+    - entity_reference_facet_link
     - field_group
     - geolocation
     - text
@@ -314,18 +316,18 @@ content:
     weight: 0
     region: content
   field_genre:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: genre
     third_party_settings: {  }
     weight: 21
     region: content
   field_geographic_subject:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: subject_geographic
     third_party_settings: {  }
     weight: 26
     region: content
@@ -383,10 +385,10 @@ content:
     weight: 37
     region: content
   field_member_of:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: member_of
     third_party_settings: {  }
     weight: 1
     region: content
@@ -414,10 +416,10 @@ content:
     weight: 36
     region: content
   field_physical_form:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: form
     third_party_settings: {  }
     weight: 22
     region: content
@@ -430,10 +432,10 @@ content:
     weight: 4
     region: content
   field_resource_type:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: resource_type
     third_party_settings: {  }
     weight: 20
     region: content
@@ -445,26 +447,26 @@ content:
     weight: 38
     region: content
   field_subject:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: subject_topical
     third_party_settings: {  }
     weight: 25
     region: content
   field_subject_general:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: subject
     third_party_settings: {  }
     weight: 24
     region: content
   field_subjects_name:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: subject_name
     third_party_settings: {  }
     weight: 27
     region: content
@@ -476,10 +478,10 @@ content:
     weight: 17
     region: content
   field_temporal_subject:
-    type: entity_reference_label
+    type: entity_reference_facet_link
     label: hidden
     settings:
-      link: true
+      facet: subject_temporal
     third_party_settings: {  }
     weight: 28
     region: content

@@ -26,6 +26,7 @@ module:
   editor: 0
   entity_browser: 0
   entity_browser_entity_form: 0
+  entity_reference_facet_link: 0
   eva: 0
   facets: 0
   facets_date_range: 0

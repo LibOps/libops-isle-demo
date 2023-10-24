@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd0099272bab562b7c07d49db199be18",
+    "content-hash": "e5b4e7551003b4ce6ccc1aaf1a844d2e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2508,6 +2508,56 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/entity_browser",
                 "issues": "https://www.drupal.org/project/issues/entity_browser",
+                "irc": "irc://irc.freenode.org/drupal-contribute"
+            }
+        },
+        {
+            "name": "drupal/entity_reference_facet_link",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/entity_reference_facet_link.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_facet_link-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "3354beb67b8fdce05df16f1dd9f16160fe8ce3a7"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9 || ^10"
+            },
+            "conflict": {
+                "drupal/facets": "<1.0.0-beta1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1656723985",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Project has not opted into security advisory coverage!"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "David Cameron (dcam)",
+                    "homepage": "https://www.drupal.org/u/dcam",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Provides a display plugin for Entity Reference fields that links terms to faceted search pages.",
+            "homepage": "https://www.drupal.org/project/entity_reference_facet_link",
+            "support": {
+                "source": "https://cgit.drupalcode.org/entity_reference_facet_link",
+                "issues": "https://drupal.org/project/issues/entity_reference_facet_link",
                 "irc": "irc://irc.freenode.org/drupal-contribute"
             }
         },
@@ -7583,16 +7633,16 @@
         },
         {
             "name": "libops/isle",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LibOps/isle-theme.git",
-                "reference": "43490912af331eebe8b5eb785908bc416e81b5e7"
+                "reference": "3beec9d8d57b43b478f718322ed6a2c55a879b28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LibOps/isle-theme/zipball/43490912af331eebe8b5eb785908bc416e81b5e7",
-                "reference": "43490912af331eebe8b5eb785908bc416e81b5e7",
+                "url": "https://api.github.com/repos/LibOps/isle-theme/zipball/3beec9d8d57b43b478f718322ed6a2c55a879b28",
+                "reference": "3beec9d8d57b43b478f718322ed6a2c55a879b28",
                 "shasum": ""
             },
             "require": {
@@ -7603,9 +7653,9 @@
             "description": "Bootstrap theme for Islandora",
             "support": {
                 "issues": "https://github.com/LibOps/isle-theme/issues",
-                "source": "https://github.com/LibOps/isle-theme/tree/1.0.0-beta1"
+                "source": "https://github.com/LibOps/isle-theme/tree/1.0.0-beta2"
             },
-            "time": "2023-10-23T22:05:23+00:00"
+            "time": "2023-10-24T23:45:31+00:00"
         },
         {
             "name": "libops/libops",
