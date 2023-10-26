@@ -1,6 +1,6 @@
 # LibOps
 
-See [LibOps Development Documentation](https://libops.github.io/documentation/development/) for full information.
+See [LibOps Development Documentation](https://docs.libops.io/development/) for full information.
 
 ## Overview
 
