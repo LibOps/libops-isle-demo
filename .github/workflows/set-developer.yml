@@ -15,6 +15,7 @@ jobs:
   apply:
     uses: libops/actions/.github/workflows/set-developer.yml@main
     permissions:
+      actions: write
       contents: write
     secrets: inherit
     with:
