@@ -1,5 +1,6 @@
 name: Update libops.yml
 on:
+  workflow_dispatch:
   push:
     branches:    
       - development
