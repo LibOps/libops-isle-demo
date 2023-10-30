@@ -1,0 +1,22 @@
+name: Set developer
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'Google Cloud account with developer access to this repository'
+        required: true
+        type: string
+      ip:
+        description: 'IP Address to add to the HTTPS and SSH firewall'
+        required: false
+        type: string
+        default: ""
+jobs:
+  apply:
+    uses: libops/actions/.github/workflows/set-developer.yml@main
+    permissions:
+      contents: write
+    secrets: inherit
+    with:
+      email: ${{ inputs.email }}
+      ip: ${{ inputs.ip }}
