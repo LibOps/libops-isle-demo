@@ -13,7 +13,7 @@ dependencies:
 id: isle_year
 theme: isle
 region: sidebar_first
-weight: -7
+weight: -3
 provider: null
 plugin: 'facet_block:year'
 settings:

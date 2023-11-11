@@ -21,14 +21,7 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     uri: 'http://mozilla.github.io/pdf.js'
-    logic: or
-  media_has_mimetype:
-    id: media_has_mimetype
-    negate: false
-    uuid: 40526e77-7fef-4d14-8b0e-123a85872115
-    context_mapping:
-      node: '@node.node_route_context:node'
-    mimetypes: application/pdf
+    logic: and
 reactions:
   blocks:
     id: blocks

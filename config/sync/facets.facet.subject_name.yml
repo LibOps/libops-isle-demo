@@ -1,4 +1,4 @@
-uuid: e8224984-2368-4d32-a856-08c016db7fdd
+uuid: cc139c21-e5e4-4215-9fb7-f601b212924b
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,17 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
+_core:
+  default_config_hash: 7wIVHSpCnRPcuQN3CG6sK7bDUdbHR0waVas0fLnWV7k
 id: subject_name
-name: 'Subject (Name)'
+name: 'Subject (Names)'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
 url_alias: subject_name
 facet_source_id: 'search_api:views_page__solr_search_content__page_1'
-field_identifier: field_subjects_name
+field_identifier: subject_names_name
 query_operator: or
 hard_limit: 0
 exclude: false
@@ -31,9 +33,9 @@ widget:
   config:
     show_numbers: true
     soft_limit: 10
-    show_reset_link: false
+    show_reset_link: true
     reset_text: 'Show all'
-    hide_reset_when_no_selection: false
+    hide_reset_when_no_selection: true
     soft_limit_settings:
       show_less_label: 'Show less'
       show_more_label: 'Show more'
@@ -61,15 +63,15 @@ processor_configs:
       sort: 40
     settings:
       sort: ASC
+  hide_inactive_siblings_processor:
+    processor_id: hide_inactive_siblings_processor
+    weights:
+      build: 10
+    settings: {  }
   hierarchy_processor:
     processor_id: hierarchy_processor
     weights:
       build: 100
-    settings: {  }
-  translate_entity:
-    processor_id: translate_entity
-    weights:
-      build: 5
     settings: {  }
   url_processor_handler:
     processor_id: url_processor_handler

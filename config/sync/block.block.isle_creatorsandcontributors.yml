@@ -13,7 +13,7 @@ dependencies:
 id: isle_creatorsandcontributors
 theme: isle
 region: sidebar_first
-weight: -8
+weight: -6
 provider: null
 plugin: 'facet_block:creators_and_contributors'
 settings:

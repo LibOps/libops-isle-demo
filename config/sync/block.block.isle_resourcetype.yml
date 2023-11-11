@@ -13,7 +13,7 @@ dependencies:
 id: isle_resourcetype
 theme: isle
 region: sidebar_first
-weight: -10
+weight: -8
 provider: null
 plugin: 'facet_block:resource_type'
 settings:
