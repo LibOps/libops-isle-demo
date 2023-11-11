@@ -79,6 +79,7 @@
         "drupal/views_bootstrap": "^5.5@alpha",
         "drupal/views_data_export": "^1.2",
         "drupal/views_field_view": "^1.0@beta",
+        "drupal/xmlsitemap": "^1.5",
         "drush/drush": "^11.6",
         "google/auth": "^1.30",
         "islandora-rdm/islandora_fits": "dev-8.x-1.x as 1.x-dev",
