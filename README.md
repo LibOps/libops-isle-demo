@@ -38,3 +38,5 @@ The most notable changes after forking have been:
 - Added/configured [drupal/metatag_google_scholar](https://www.drupal.org/project/metatag_google_scholar)
 - Added [drupal/views_bootstrap](https://www.drupal.org/project/views_bootstrap) and applied bootstrap style to solr search
 - Added [drupal/entity_reference_facet_link](https://www.drupal.org/project/entity_reference_facet_link) and applied to entity references with facets on search page
+- Added [drupal/redis](https://www.drupal.org/project/redis) and configured to utilize LibOps redis server
+

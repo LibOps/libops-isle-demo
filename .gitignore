@@ -12,6 +12,7 @@
 /web/sites/*/services*.yml
 !/web/sites/*/services.yml
 /web/sites/*/settings.local.php
+/web/sites/*/settings.php
 /web/sites/simpletest
 /web/themes/contrib/
 .DS_Store
