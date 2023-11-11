@@ -1,0 +1,8 @@
+uuid: 778d3c91-45d6-4bf7-9414-7bd704e0529e
+langcode: en
+status: true
+dependencies: {  }
+id: g3XYqcXbSKPVBDODwnT6pq7oqhCFkPryj4vVqrl_Kfc
+label: 'LibOps Islandora Sitemap'
+context:
+  language: en
