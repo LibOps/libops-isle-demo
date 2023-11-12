@@ -1,4 +1,4 @@
-uuid: 3826cca7-7f40-4b6d-b41a-089fb83054fd
+uuid: b3b1e9d6-ecf8-4f71-ac1e-c0ac92d18817
 langcode: en
 status: true
 dependencies:
@@ -7,6 +7,7 @@ dependencies:
   module:
     - facets
     - islandora
+    - system
   theme:
     - isle
 id: isle_subject
@@ -28,3 +29,7 @@ visibility:
     negate: false
     context_mapping: {  }
     mimetype: ''
+  request_path:
+    id: request_path
+    negate: false
+    pages: /search
