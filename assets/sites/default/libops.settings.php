@@ -9,6 +9,9 @@
  */
 require_once "/libops.php";
 
+$settings['hash_salt'] = getenv('LIBOPS_HASH_SALT');
+$settings['config_sync_directory'] = '../config/sync';
+
 /**
  * Add ISLE specific settings
  */
