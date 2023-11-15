@@ -2,7 +2,7 @@ name: Backup development (nightly)
 on:
   schedule:
     # UTC
-    - cron: '00 7 * * *'
+    - cron: '57 5 * * *'
   workflow_dispatch:
 jobs:
   backup:
