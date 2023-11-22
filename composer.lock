@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "18edd215944dbc5ebbb9e70241839b83",
+    "content-hash": "91592072fbd2e0de651ee387e7cac7cb",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -285,16 +285,16 @@
         },
         {
             "name": "citation-style-language/styles",
-            "version": "v0.0.324",
+            "version": "v0.0.325",
             "source": {
                 "type": "git",
                 "url": "https://github.com/citation-style-language/styles.git",
-                "reference": "503d3d5eb121056ef9ab562995b4144442a19714"
+                "reference": "5bea241e5a2acacc29b947e21539be9cbe79c8bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/503d3d5eb121056ef9ab562995b4144442a19714",
-                "reference": "503d3d5eb121056ef9ab562995b4144442a19714",
+                "url": "https://api.github.com/repos/citation-style-language/styles/zipball/5bea241e5a2acacc29b947e21539be9cbe79c8bd",
+                "reference": "5bea241e5a2acacc29b947e21539be9cbe79c8bd",
                 "shasum": ""
             },
             "type": "library",
@@ -312,7 +312,7 @@
             "homepage": "http://citationstyles.org/",
             "support": {
                 "issues": "https://github.com/citation-style-language/styles/issues",
-                "source": "https://github.com/citation-style-language/styles/tree/v0.0.324"
+                "source": "https://github.com/citation-style-language/styles/tree/v0.0.325"
             },
             "funding": [
                 {
@@ -320,7 +320,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-11-01T04:10:07+00:00"
+            "time": "2023-11-10T16:42:03+00:00"
         },
         {
             "name": "composer/installers",
@@ -3554,30 +3554,31 @@
         },
         {
             "name": "drupal/hal",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/hal.git",
-                "reference": "2.0.1"
+                "reference": "2.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/hal-2.0.1.zip",
-                "reference": "2.0.1",
-                "shasum": "606106bd17e7691611c0bd22b4aed9888a6b6983"
+                "url": "https://ftp.drupal.org/files/projects/hal-2.0.2.zip",
+                "reference": "2.0.2",
+                "shasum": "9ec3ad376678941bae2e0eae0c980c42cddfc8b2"
             },
             "require": {
                 "drupal/core": "^10"
             },
             "require-dev": {
                 "drupal/aggregator": "2.x-dev",
-                "drupal/entity_reference_revisions": "1.x-dev"
+                "drupal/entity_reference_revisions": "1.x-dev",
+                "drupal/rdf": "2.x-dev"
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.0.1",
-                    "datestamp": "1658902138",
+                    "version": "2.0.2",
+                    "datestamp": "1700523711",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -3699,17 +3700,17 @@
         },
         {
             "name": "drupal/islandora",
-            "version": "2.9.1",
+            "version": "2.10.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/islandora.git",
-                "reference": "2.9.1"
+                "reference": "2.10.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/islandora-2.9.1.zip",
-                "reference": "2.9.1",
-                "shasum": "9e7b40aa422676684ac2dfbfd614d0a77d8a8c50"
+                "url": "https://ftp.drupal.org/files/projects/islandora-2.10.0.zip",
+                "reference": "2.10.0",
+                "shasum": "9712b9844e965ad9cc00c3726ca8f10afe69865b"
             },
             "require": {
                 "drupal/context": "^4 || ^5@RC",
@@ -3741,13 +3742,14 @@
                 "squizlabs/php_codesniffer": "^2.7.1"
             },
             "suggest": {
+                "drupal/coi": "Some configuration fields work with Config Override Inspector.",
                 "drupal/transliterate_filenames": "Sanitizes filenames when they are uploaded so they don't break your repository."
             },
             "type": "drupal-module",
             "extra": {
                 "drupal": {
-                    "version": "2.9.1",
-                    "datestamp": "1698071313",
+                    "version": "2.10.0",
+                    "datestamp": "1700257320",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -6284,26 +6286,26 @@
         },
         {
             "name": "enlightn/security-checker",
-            "version": "v1.10.0",
+            "version": "v1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/enlightn/security-checker.git",
-                "reference": "196bacc76e7a72a63d0e1220926dbb190272db97"
+                "reference": "68df5c7256c84b428bf8fcff0d249de06ce362d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enlightn/security-checker/zipball/196bacc76e7a72a63d0e1220926dbb190272db97",
-                "reference": "196bacc76e7a72a63d0e1220926dbb190272db97",
+                "url": "https://api.github.com/repos/enlightn/security-checker/zipball/68df5c7256c84b428bf8fcff0d249de06ce362d2",
+                "reference": "68df5c7256c84b428bf8fcff0d249de06ce362d2",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^6.3|^7.0",
                 "php": ">=5.6",
-                "symfony/console": "^3.4|^4|^5|^6",
-                "symfony/finder": "^3|^4|^5|^6",
-                "symfony/process": "^3.4|^4|^5|^6",
-                "symfony/yaml": "^3.4|^4|^5|^6"
+                "symfony/console": "^3.4|^4|^5|^6|^7",
+                "symfony/finder": "^3|^4|^5|^6|^7",
+                "symfony/process": "^3.4|^4|^5|^6|^7",
+                "symfony/yaml": "^3.4|^4|^5|^6|^7"
             },
             "require-dev": {
                 "ext-zip": "*",
@@ -6344,26 +6346,26 @@
             ],
             "support": {
                 "issues": "https://github.com/enlightn/security-checker/issues",
-                "source": "https://github.com/enlightn/security-checker/tree/v1.10.0"
+                "source": "https://github.com/enlightn/security-checker/tree/v1.11.0"
             },
-            "time": "2022-02-21T22:40:16+00:00"
+            "time": "2023-11-17T07:53:29+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.16.0",
+            "version": "v4.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8"
+                "reference": "bbc513d79acf6691fa9cf10f192c90dd2957f18c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/523407fb06eb9e5f3d59889b3978d5bfe94299c8",
-                "reference": "523407fb06eb9e5f3d59889b3978d5bfe94299c8",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/bbc513d79acf6691fa9cf10f192c90dd2957f18c",
+                "reference": "bbc513d79acf6691fa9cf10f192c90dd2957f18c",
                 "shasum": ""
             },
             "require": {
-                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0"
+                "php": "~5.6.0 || ~7.0.0 || ~7.1.0 || ~7.2.0 || ~7.3.0 || ~7.4.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0"
             },
             "require-dev": {
                 "cerdic/css-tidy": "^1.7 || ^2.0",
@@ -6405,9 +6407,9 @@
             ],
             "support": {
                 "issues": "https://github.com/ezyang/htmlpurifier/issues",
-                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.16.0"
+                "source": "https://github.com/ezyang/htmlpurifier/tree/v4.17.0"
             },
-            "time": "2022-09-18T07:06:19+00:00"
+            "time": "2023-11-17T15:01:25+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -7816,16 +7818,16 @@
         },
         {
             "name": "libops/libops",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LibOps/drupal-module.git",
-                "reference": "0803899beb6f6cdf172733135fbc185d6f6e0766"
+                "reference": "0cb5938858d0610e31c48ac26e307cf8fe22deea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LibOps/drupal-module/zipball/0803899beb6f6cdf172733135fbc185d6f6e0766",
-                "reference": "0803899beb6f6cdf172733135fbc185d6f6e0766",
+                "url": "https://api.github.com/repos/LibOps/drupal-module/zipball/0cb5938858d0610e31c48ac26e307cf8fe22deea",
+                "reference": "0cb5938858d0610e31c48ac26e307cf8fe22deea",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -7833,9 +7835,9 @@
             "description": "Run Islandora on Google Cloud",
             "support": {
                 "issues": "https://github.com/LibOps/drupal-module/issues",
-                "source": "https://github.com/LibOps/drupal-module/tree/1.0.0"
+                "source": "https://github.com/LibOps/drupal-module/tree/1.1.0"
             },
-            "time": "2023-10-23T21:53:10+00:00"
+            "time": "2023-11-22T11:45:23+00:00"
         },
         {
             "name": "library/pdf.js",

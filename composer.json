@@ -152,8 +152,7 @@
                 "Allow install from existing config": "assets/patches/matomo/matomo-3363521-7.patch"
             },
             "drupal/islandora": {
-                "Remove features": "assets/patches/drupal/islandora/rm-features.patch",
-                "Do not render blank PDF URLs": "https://github.com/Islandora/islandora/pull/985.patch"
+                "Remove features": "assets/patches/drupal/islandora/rm-features.patch"
             },
             "library/pdf.js": {
                 "Allow viewing PDFs from GCS buckets configured for the site": "assets/patches/library/pdf.js/cors.patch"

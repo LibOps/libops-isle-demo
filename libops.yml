@@ -9,4 +9,6 @@ mariadb: 10.3.39
 solr: 8
 domain-mappings:
     development: []
-    production: []
+    production:
+        - demo.libops.io
+
