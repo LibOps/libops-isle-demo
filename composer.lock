@@ -7982,16 +7982,16 @@
         },
         {
             "name": "libops/libops",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LibOps/drupal-module.git",
-                "reference": "0cb5938858d0610e31c48ac26e307cf8fe22deea"
+                "reference": "c394787c8cc7f5f6c0a09afe81b71427a4261c1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LibOps/drupal-module/zipball/0cb5938858d0610e31c48ac26e307cf8fe22deea",
-                "reference": "0cb5938858d0610e31c48ac26e307cf8fe22deea",
+                "url": "https://api.github.com/repos/LibOps/drupal-module/zipball/c394787c8cc7f5f6c0a09afe81b71427a4261c1a",
+                "reference": "c394787c8cc7f5f6c0a09afe81b71427a4261c1a",
                 "shasum": ""
             },
             "type": "drupal-module",
@@ -7999,9 +7999,9 @@
             "description": "Run Islandora on Google Cloud",
             "support": {
                 "issues": "https://github.com/LibOps/drupal-module/issues",
-                "source": "https://github.com/LibOps/drupal-module/tree/1.1.0"
+                "source": "https://github.com/LibOps/drupal-module/tree/1.1.2"
             },
-            "time": "2023-11-22T11:45:23+00:00"
+            "time": "2023-11-25T14:47:42+00:00"
         },
         {
             "name": "library/pdf.js",
