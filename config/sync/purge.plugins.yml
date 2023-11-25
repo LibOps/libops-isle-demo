@@ -1,0 +1,13 @@
+purgers:
+  -
+    instance_id: c6449ce9ce
+    plugin_id: httpbundled
+    order_index: 2
+  -
+    instance_id: 0806f95a4a
+    plugin_id: httpbundled
+    order_index: 3
+  -
+    instance_id: 2ebb27226c
+    plugin_id: httpbundled
+    order_index: 4

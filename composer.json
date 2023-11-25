@@ -67,6 +67,8 @@
         "drupal/metatag_google_scholar": "^1.1",
         "drupal/node_edit_protection": "^1.1",
         "drupal/pdf": "^1.1",
+        "drupal/purge": "^3.5",
+        "drupal/purge_purger_http": "^1.2",
         "drupal/redirect": "^1.9",
         "drupal/redis": "^1.7",
         "drupal/rest_oai_pmh": "^2.0@beta",

@@ -1,0 +1,23 @@
+uuid: f138004f-1b56-4354-8ad8-318ec8ae8cd8
+langcode: en
+status: true
+dependencies: {  }
+label: null
+id: 0806f95a4a
+name: everything
+invalidationtype: everything
+hostname: libops-cdn-purge
+port: 8080
+path: /
+request_method: BAN
+scheme: http
+verify: true
+headers: {  }
+body: '[invalidations:separated_pipe]'
+body_content_type: text/plain
+runtime_measurement: true
+timeout: 1.0
+connect_timeout: 1.0
+cooldown_time: 0.0
+max_requests: 100
+http_errors: true
