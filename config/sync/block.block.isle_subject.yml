@@ -1,28 +1,28 @@
-uuid: 926fc381-1279-4ced-b855-2c14fb62be03
+uuid: b3b1e9d6-ecf8-4f71-ac1e-c0ac92d18817
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.year
+    - facets.facet.subject
   module:
     - facets
     - islandora
     - system
   theme:
     - isle
-id: isle_year
+id: isle_subject
 theme: isle
 region: sidebar_first
-weight: -7
+weight: -5
 provider: null
-plugin: 'facet_block:year'
+plugin: 'facet_block:subject'
 settings:
-  id: 'facet_block:year'
-  label: Year
+  id: 'facet_block:subject'
+  label: Subject
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: isle_year
+  block_id: isle_subject
 visibility:
   media_source_mimetype:
     id: media_source_mimetype

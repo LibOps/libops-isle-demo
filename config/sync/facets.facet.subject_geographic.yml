@@ -1,4 +1,4 @@
-uuid: 881f20e5-0d0a-4664-8466-83457b79f417
+uuid: 9ec76b86-86cb-40d3-a703-2653128757c3
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
-id: member_of
-name: 'Member of'
+id: subject_geographic
+name: 'Subject (Geographic)'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: member_of
+url_alias: subject_geographic
 facet_source_id: 'search_api:views_page__solr_search_content__page_1'
-field_identifier: field_member_of
+field_identifier: field_geographic_subject_1
 query_operator: or
 hard_limit: 0
 exclude: false

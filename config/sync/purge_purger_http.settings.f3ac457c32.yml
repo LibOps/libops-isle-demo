@@ -1,9 +1,9 @@
-uuid: 94962c25-0652-4c91-9df0-a6179dae2f69
+uuid: ee25c32e-a7f2-4e89-a7d8-37b6e5007b9c
 langcode: en
 status: true
 dependencies: {  }
 label: null
-id: 2ebb27226c
+id: f3ac457c32
 name: tag
 invalidationtype: tag
 hostname: libops-cdn-purge

@@ -1,34 +1,34 @@
 channels:
-  0:
+  -
     id: purgers
     grants:
       - 0
       - 2
       - 3
-  1:
+  -
     id: queue
     grants:
       - 0
       - 2
       - 3
-  2:
+  -
     id: diagnostics
     grants:
       - 3
-  6:
-    id: purger_httpbundled_c6449ce9ce
+  -
+    id: purger_httpbundled_4ffd84b642
     grants:
       - 0
       - 2
       - 3
-  7:
-    id: purger_httpbundled_0806f95a4a
+  -
+    id: purger_httpbundled_a322de27fd
     grants:
       - 0
       - 2
       - 3
-  10:
-    id: purger_httpbundled_2ebb27226c
+  -
+    id: purger_httpbundled_f3ac457c32
     grants:
       - 0
       - 2

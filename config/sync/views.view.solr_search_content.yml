@@ -1036,30 +1036,27 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           reduce_duplicates: false
-        rendered_item:
-          id: rendered_item
+        search_api_fulltext:
+          id: search_api_fulltext
           table: search_api_index_default_solr_index
-          field: rendered_item
+          field: search_api_fulltext
           relationship: none
           group_type: group
           admin_label: ''
-          plugin_id: search_api_text
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: ''
+          plugin_id: search_api_fulltext
+          operator: and
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: rendered_item_op
-            label: Search
+            operator_id: search_api_fulltext_op
+            label: 'Fulltext search'
             description: ''
             use_operator: false
-            operator: rendered_item_op
+            operator: search_api_fulltext_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: query
+            identifier: search_api_fulltext
             required: false
             remember: false
             multiple: false
@@ -1069,9 +1066,9 @@ display:
               content_editor: '0'
               administrator: '0'
               fedoraadmin: '0'
-            min_placeholder: ''
-            max_placeholder: ''
+            expose_fields: false
             placeholder: ''
+            searched_fields_id: search_api_fulltext_searched_fields
           is_grouped: false
           group_info:
             label: ''
@@ -1084,6 +1081,9 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
+          parse_mode: terms
+          min_length: null
+          fields: {  }
       filter_groups:
         operator: AND
         groups:

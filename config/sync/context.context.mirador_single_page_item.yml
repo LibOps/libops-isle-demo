@@ -19,14 +19,7 @@ conditions:
     context_mapping:
       node: '@node.node_route_context:node'
     uri: 'https://projectmirador.org'
-    logic: and
-  media_has_mimetype:
-    id: media_has_mimetype
-    negate: false
-    uuid: 6bc8e35f-dc19-4eb9-940d-7b2fd859ad0c
-    context_mapping:
-      node: '@node.node_route_context:node'
-    mimetypes: 'image/jpeg, image/gif, image/jp2, image/tiff'
+    logic: or
 reactions:
   blocks:
     id: blocks
@@ -48,6 +41,6 @@ reactions:
         context_mapping: {  }
         iiif_manifest_url: '[node:url:unaliased:absolute]/manifest'
         third_party_settings: {  }
-    include_default_blocks: 0
+    include_default_blocks: 1
     saved: false
 weight: 0

@@ -1,4 +1,4 @@
-uuid: 919a8fe8-13b7-4535-8d1a-ee15625f8149
+uuid: 6ff392fe-2ce2-4337-a250-bda1b43a2163
 langcode: en
 status: true
 dependencies:
@@ -13,12 +13,12 @@ dependencies:
 id: isle_memberof
 theme: isle
 region: sidebar_first
-weight: -7
+weight: -9
 provider: null
 plugin: 'facet_block:member_of'
 settings:
   id: 'facet_block:member_of'
-  label: Collection
+  label: 'Member of'
   label_display: visible
   provider: facets
   context_mapping: {  }

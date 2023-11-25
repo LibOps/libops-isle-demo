@@ -1,13 +1,13 @@
-uuid: f138004f-1b56-4354-8ad8-318ec8ae8cd8
+uuid: b9b1fee4-6c12-44ac-8625-593771a0c457
 langcode: en
 status: true
 dependencies: {  }
 label: null
-id: 0806f95a4a
-name: everything
-invalidationtype: everything
+id: 4ffd84b642
+name: path
+invalidationtype: path
 hostname: libops-cdn-purge
-port: 8080
+port: 80
 path: /
 request_method: BAN
 scheme: http

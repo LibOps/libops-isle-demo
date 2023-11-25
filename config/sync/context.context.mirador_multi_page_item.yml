@@ -10,7 +10,7 @@ name: mirador_multi_page_item
 group: Display
 description: 'If Paged Content or Publication Issue, display Openseadragon from manifest'
 requireAllConditions: true
-disabled: false
+disabled: true
 conditions:
   node_has_term:
     id: node_has_term

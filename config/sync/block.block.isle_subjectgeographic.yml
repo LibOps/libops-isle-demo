@@ -1,28 +1,28 @@
-uuid: 926fc381-1279-4ced-b855-2c14fb62be03
+uuid: 0e85ef0d-a6a2-4a74-99bd-ad041f247b65
 langcode: en
 status: true
 dependencies:
   config:
-    - facets.facet.year
+    - facets.facet.subject_geographic
   module:
     - facets
     - islandora
     - system
   theme:
     - isle
-id: isle_year
+id: isle_subjectgeographic
 theme: isle
 region: sidebar_first
-weight: -7
+weight: -4
 provider: null
-plugin: 'facet_block:year'
+plugin: 'facet_block:subject_geographic'
 settings:
-  id: 'facet_block:year'
-  label: Year
+  id: 'facet_block:subject_geographic'
+  label: 'Subject (Geographic)'
   label_display: visible
   provider: facets
   context_mapping: {  }
-  block_id: isle_year
+  block_id: isle_subjectgeographic
 visibility:
   media_source_mimetype:
     id: media_source_mimetype

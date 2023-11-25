@@ -1,11 +1,11 @@
-uuid: 3546843a-c195-4324-a643-95995607b381
+uuid: ceccad9f-a359-489e-afff-481203dca842
 langcode: en
 status: true
 dependencies: {  }
 label: null
-id: c6449ce9ce
-name: path
-invalidationtype: path
+id: a322de27fd
+name: everything
+invalidationtype: everything
 hostname: libops-cdn-purge
 port: 8080
 path: /
@@ -13,7 +13,7 @@ request_method: BAN
 scheme: http
 verify: true
 headers: {  }
-body: '[invalidations:separated_pipe]'
+body: ''
 body_content_type: text/plain
 runtime_measurement: true
 timeout: 1.0

@@ -1,4 +1,4 @@
-uuid: 881f20e5-0d0a-4664-8466-83457b79f417
+uuid: a5c85ddf-18f7-4cca-8073-6b2f38dffd23
 langcode: en
 status: true
 dependencies:
@@ -7,15 +7,15 @@ dependencies:
     - views.view.solr_search_content
   module:
     - search_api
-id: member_of
-name: 'Member of'
+id: subject_topical
+name: 'Subject (Topical)'
 weight: 0
 min_count: 1
 missing: false
 missing_label: others
-url_alias: member_of
+url_alias: subject_topical
 facet_source_id: 'search_api:views_page__solr_search_content__page_1'
-field_identifier: field_member_of
+field_identifier: field_subject
 query_operator: or
 hard_limit: 0
 exclude: false

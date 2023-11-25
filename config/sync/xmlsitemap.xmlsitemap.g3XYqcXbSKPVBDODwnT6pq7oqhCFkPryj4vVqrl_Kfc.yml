@@ -1,8 +1,8 @@
-uuid: 778d3c91-45d6-4bf7-9414-7bd704e0529e
+uuid: ef03dc5e-87e2-485a-9a01-3ee295e9eecd
 langcode: en
 status: true
 dependencies: {  }
 id: g3XYqcXbSKPVBDODwnT6pq7oqhCFkPryj4vVqrl_Kfc
-label: 'LibOps Islandora Sitemap'
+label: 'https://demo.libops.io'
 context:
   language: en
