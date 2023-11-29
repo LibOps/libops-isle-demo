@@ -150,9 +150,6 @@
             ]
         },
         "patches": {
-            "drupal/matomo": {
-                "Allow install from existing config": "assets/patches/matomo/matomo-3363521-7.patch"
-            },
             "drupal/islandora": {
                 "Remove features": "assets/patches/drupal/islandora/rm-features.patch"
             },
