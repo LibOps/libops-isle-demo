@@ -40,4 +40,4 @@ The most notable changes after forking have been:
 - Added [drupal/entity_reference_facet_link](https://www.drupal.org/project/entity_reference_facet_link) and applied to entity references with facets on search page
 - Added [drupal/redis](https://www.drupal.org/project/redis) and configured to utilize LibOps redis server
 - Added [drupal/xmlsitemap](https://www.drupal.org/project/xmlsitemap) and configured to expose repository items
-
+- Integrated with Google Cloud CDN, including a fully configured [purge module](https://www.drupal.org/project/purge) setup to keep caches fresh
