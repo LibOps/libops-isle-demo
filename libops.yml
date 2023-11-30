@@ -1,5 +1,5 @@
 version: 0.1
-php: 8.2
+php: 8.3
 https-firewall: []
 ssh-firewall: []
 blocked-ips: []
@@ -11,4 +11,3 @@ domain-mappings:
     development: []
     production:
         - demo.libops.io
-
