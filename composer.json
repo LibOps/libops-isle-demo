@@ -150,9 +150,6 @@
             ]
         },
         "patches": {
-            "drupal/islandora": {
-                "Remove features": "assets/patches/drupal/islandora/rm-features.patch"
-            },
             "library/pdf.js": {
                 "Allow viewing PDFs from GCS buckets configured for the site": "assets/patches/library/pdf.js/cors.patch"
             }
